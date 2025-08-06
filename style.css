@@ -1,0 +1,566 @@
+/* =============================
+   RESET GENERAL
+============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #000000; /* Fondo negro general */
+}
+
+/* =============================
+   HEADER
+============================= */
+header {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;  
+    max-width: 1200px;  
+    margin: 0 auto;     
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 60px; 
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;  
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    color: #000000;
+}
+
+/* Header - Responsive Tablet */
+@media (max-width: 1024px) {
+    nav ul {
+        flex-wrap: wrap;         
+        justify-content: center; 
+    }
+
+    .logo img {
+        height: 50px; 
+    }
+}
+
+/* Header - Responsive Mobile */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;  
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;  
+        gap: 10px;
+    }
+}
+
+/* =============================
+   HERO SECTION (Imagen de Portada)
+============================= */
+.hero {
+    width: 100%;
+    height: 100vh;  /* ✅ Ocupa toda la altura de la pantalla */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* ✅ Que la imagen cubra todo sin deformarse */
+    display: block;
+}
+
+.hero-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+.hero-texto h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-texto p {
+    font-size: 1.5rem;
+}
+
+/* =============================
+   BOTÓN DESTACADO (CTA)
+============================= */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #80bbff, #68bbff);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+}
+
+
+/* =============================
+   SERVICIOS
+============================= */
+.services {
+    padding: 100px 0;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #1e3a8a;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(45deg, #699eff, #7fc5ff);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(30, 58, 138, 0.2);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+
+/* =============================
+   SOBRE NOSOTROS
+============================= */
+.about {
+    padding: 100px 0;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.about-text h2 {
+    color: #1e3a8a;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.btn-asesoramiento {
+    display: inline-block;
+    background: #ffffff;
+    color: #1e3a8a;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-asesoramiento:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+/* =============================
+   TEAM
+============================= */
+.team {
+    padding: 100px 0;
+    background: white;
+}
+
+.team-member {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(30, 58, 138, 0.15);
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e3a8a, #1e40af);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    margin: 0 auto 20px;
+}
+
+.team-member h3 {
+    color: #1e3a8a;
+}
+
+.team-member .position {
+    color: #000;
+    font-weight: 600;
+}
+
+
+/* =============================
+   CONTACTO
+============================= */
+.contact {
+    padding: 100px 0;
+    background: #1e3a8a;
+    color: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.contact-info h3 {
+    color: #78c2ff;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, #5f91ff, #76b6ff);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
+}
+
+
+/* =============================  
+   FOOTER 
+============================= */
+footer {
+    background: #111827;
+    color: white;
+    padding: 60px 20px 30px;  
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+.footer-section {
+    min-width: 200px;  
+    flex: 1;
+    max-width: 300px;  
+}
+
+.footer-section h4 {
+    color: #63a2ff;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Redes Sociales */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon-circle {
+    background-color: #ffffff;    
+    border-radius: 50%;           
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon-circle img {
+    width: 22px;   
+    height: 22px;
+}
+
+.social-icon-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    color: #d1d5db;
+}
+
+/* =============================  
+   FOOTER - RESPONSIVE  
+============================= */
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;   
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        max-width: 100%;
+    }
+}
+
+
+
+/* =============================
+   WHATSAPP BUTTON
+============================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e3a8a;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+    filter: invert(1);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+
+/* =============================
+   RESPONSIVE DESIGN
+============================= */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .hero {
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+}
+
+.hero-content {
+  height: 100%;
+  position: relative;
+}
+
+.hero-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* =============================
+   ANIMACIONES
+============================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card,
+.team-member {
+    animation: fadeInUp 0.6s ease-out;
+}
